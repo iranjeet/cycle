@@ -19,10 +19,34 @@ public class FrameMaterial {
 	private Long Id;
 	
 	@Column(name="name")
-	private String name;
+	private String name;//carbon , alloy
+	
+	@Column(name ="image")
+	private String imageUrl;
+	
+	@Column(name ="rating")
+	private Double rating;
+	
+	@Column(name="desity")
+	private String desity;
+	
+	@Column(name="stiffness")
+	private String stiffness;
+	
+	@Column(name ="yeild_strength")
+	private String yeildStrength;
+	
+	@Column(name="elongation")
+	private String elongation;
+	
+	@Column(name ="fatigue_limit")
+	private String fatigueLimit;
 	
 	@Column(name ="description")	
 	private String description;
+	
+	@Column(name="type")
+	private String type;//tuss frame , Y foil, folding frame
 	
 	
 	

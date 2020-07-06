@@ -7,28 +7,27 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.cycle.list.domain.CycleReview;
+import com.cycle.list.domain.Cycle;
 
 @Repository
-public class CycleReviewDao {
+public class CycleDao {
 
 	@PersistenceContext(unitName = "application")
 	EntityManager em;
 
-	public void create(CycleReview break1) {
+	public void create(Cycle break1) {
 		em.persist(break1);
 		em.flush();
 	}
 	
-	public CycleReview getById(Long Id) {
-		return em.find(CycleReview.class, Id);
+	public Cycle getById(Long Id) {
+		return em.find(Cycle.class, Id);
 	}
 	
-	public List<CycleReview> getAllBreaks(){
+	public List<Cycle> getAllBreaks(){
 		
-		return (List<CycleReview>) em.createQuery("from Cycle_Review b").getResultList();
+		return (List<Cycle>) em.createQuery("from Cycle b").getResultList();
 		
 	}
 
-	
 }

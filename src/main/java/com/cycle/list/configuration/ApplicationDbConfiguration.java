@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-		basePackages="com.example.STARPAY",
+		basePackages="com.cycle.list",
 		entityManagerFactoryRef = "applicationEntityManagerFactory",
         transactionManagerRef = "applicationTransactionManager")
 public class ApplicationDbConfiguration {
@@ -41,7 +41,7 @@ public class ApplicationDbConfiguration {
             @Qualifier("applicationDataSource") DataSource applicationDataSource) {
         return builder
                 .dataSource(applicationDataSource)
-                .packages("com.example.STARPAY.domain")
+                .packages("com.cycle.list.domain")
                 .persistenceUnit("application")
                 .build();
     }
