@@ -47,6 +47,96 @@ public class FrameMaterial {
 	
 	@Column(name="type")
 	private String type;//tuss frame , Y foil, folding frame
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public Double getRating() {
+		return rating;
+	}
+
+	public void setRating(Double rating) {
+		this.rating = rating;
+	}
+
+	public String getDesity() {
+		return desity;
+	}
+
+	public void setDesity(String desity) {
+		this.desity = desity;
+	}
+
+	public String getStiffness() {
+		return stiffness;
+	}
+
+	public void setStiffness(String stiffness) {
+		this.stiffness = stiffness;
+	}
+
+	public String getYeildStrength() {
+		return yeildStrength;
+	}
+
+	public void setYeildStrength(String yeildStrength) {
+		this.yeildStrength = yeildStrength;
+	}
+
+	public String getElongation() {
+		return elongation;
+	}
+
+	public void setElongation(String elongation) {
+		this.elongation = elongation;
+	}
+
+	public String getFatigueLimit() {
+		return fatigueLimit;
+	}
+
+	public void setFatigueLimit(String fatigueLimit) {
+		this.fatigueLimit = fatigueLimit;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	
 	
 	
 	

@@ -1,4 +1,4 @@
-package com.cycle.list.domain;
+package com.cycle.list.constants;
 
 public enum EndUser{
 	Women,
