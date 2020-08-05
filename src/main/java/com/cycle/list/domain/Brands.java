@@ -37,7 +37,7 @@ public class Brands {
 //    private UUID uuid;//=UUID.randomUUID();
 
 	@Column(name="name")
-	private String brandName;
+	private String name;
 
 	@Column(name="origin")
 	private String origin;
@@ -71,7 +71,7 @@ public class Brands {
 	private String  foundedBy ;
 
 	@Column(name="founded_date")
-	private String foundeDate;
+	private String foundedDate;
 
 	@Column(name="key_people")
 	private String keyPeople;
@@ -84,7 +84,7 @@ public class Brands {
 
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "brands",cascade = CascadeType.ALL)
-	private Set<AssnBrandCycle> assnBrandCycles;
+	private Set<Cycle> cycle;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "brands",cascade = CascadeType.ALL)
 	private Set<FAQs> faQs;
@@ -97,12 +97,14 @@ public class Brands {
 		Id = id;
 	}
 
-	public String getBrandName() {
-		return brandName;
+
+
+	public String getName() {
+		return name;
 	}
 
-	public void setBrandName(String brandName) {
-		this.brandName = brandName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getOrigin() {
@@ -169,12 +171,12 @@ public class Brands {
 		this.foundedBy = foundedBy;
 	}
 
-	public String getFoundeDate() {
-		return foundeDate;
+	public String getFoundedDate() {
+		return foundedDate;
 	}
 
-	public void setFoundeDate(String foundeDate) {
-		this.foundeDate = foundeDate;
+	public void setFoundedDate(String foundedDate) {
+		this.foundedDate = foundedDate;
 	}
 
 	public String getKeyPeople() {
@@ -201,12 +203,14 @@ public class Brands {
 		this.email = email;
 	}
 
-	public Set<AssnBrandCycle> getAssnBrandCycles() {
-		return assnBrandCycles;
+
+
+	public Set<Cycle> getCycle() {
+		return cycle;
 	}
 
-	public void setAssnBrandCycles(Set<AssnBrandCycle> assnBrandCycles) {
-		this.assnBrandCycles = assnBrandCycles;
+	public void setCycle(Set<Cycle> cycle) {
+		this.cycle = cycle;
 	}
 
 	public Set<FAQs> getFaQs() {

@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
 
@@ -28,6 +31,16 @@ public class CycleDao {
 		
 		return (List<Cycle>) em.createQuery("from Cycle b").getResultList();
 		
+	}
+	
+	public Object check() {
+		CriteriaBuilder cb=em.getCriteriaBuilder();
+		CriteriaQuery<Cycle> q=cb.createQuery(Cycle.class);
+		Root<Cycle> root=q.from(Cycle.class);
+		q.select(root);
+				
+		
+		return null;
 	}
 
 }

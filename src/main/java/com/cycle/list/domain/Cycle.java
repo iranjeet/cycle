@@ -13,6 +13,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -34,18 +36,12 @@ public class Cycle {
 	@GenericGenerator(name = "increment",strategy = "increment")
 	@Column(name="Id")
 	private Long Id;
-//	
-//    @GeneratedValue(generator = "UUID")
-//    @GenericGenerator(
-//            name = "UUID",
-//            strategy = "org.hibernate.id.UUIDGenerator"
-//    )
-//    @Column(name = "uuid", updatable = false, nullable = false)
-//    private UUID uuid;
+	
+	
 	
 	@Column(name="name")
 	private String name;
-	
+
 	@Column(name="full_model_name")
 	private String fullModelName;
 	
@@ -123,8 +119,9 @@ public class Cycle {
 	private WheelSize wheelSize;
 	
 	
-	@OneToMany(fetch = FetchType.LAZY,mappedBy = "cycle",cascade = CascadeType.ALL)
-	private Set<AssnBrandCycle> assnBrandCycles;
+	@ManyToOne
+	@JoinColumn(name = "brand_id")
+	private Brands brands;
 
 	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "cycle")
 	private BottomBracket bottomBracket;
@@ -361,12 +358,21 @@ public class Cycle {
 		this.wheelSize = wheelSize;
 	}
 
-	public Set<AssnBrandCycle> getAssnBrandCycles() {
-		return assnBrandCycles;
+
+	public Brands getBrands() {
+		return brands;
 	}
 
-	public void setAssnBrandCycles(Set<AssnBrandCycle> assnBrandCycles) {
-		this.assnBrandCycles = assnBrandCycles;
+	public void setBrands(Brands brands) {
+		this.brands = brands;
+	}
+
+	public Set<Reviews> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(Set<Reviews> reviews) {
+		this.reviews = reviews;
 	}
 
 	public BottomBracket getBottomBracket() {

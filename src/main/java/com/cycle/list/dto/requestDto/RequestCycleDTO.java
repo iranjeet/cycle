@@ -8,9 +8,9 @@ import com.cycle.list.constants.WheelSize;
 public class RequestCycleDTO {
 	
 	private String name,fullModelName,frameMaterial,frontGear,rearGear,
-				   geometry,frontWhell,rearWheel,rearBrake,frontBreak,
+				   geometry,frontWheel,rearWheel,rearBrake,frontBreak,
 				   imageUrl,updatedBy,addedBy, description, frontHubs,
-				   rearHubs, Saddle, wheels,type_note;
+				   rearHubs, Saddle, wheels,typeNote;
 	private Double rating;
 	
 	private Categories categories;
@@ -21,7 +21,76 @@ public class RequestCycleDTO {
 	
 	private WheelSize wheelSize;
 	
+	private Long brandId,chainId,frontCassetteId,rearCassetteId,frontDerailleurId,
+				 rearDerailleurId,faQsId,reviewId;
 	
+	
+	
+	
+	public Long getFaQsId() {
+		return faQsId;
+	}
+
+	public void setFaQsId(Long faQsId) {
+		this.faQsId = faQsId;
+	}
+
+	public Long getReviewId() {
+		return reviewId;
+	}
+
+	public void setReviewId(Long reviewId) {
+		this.reviewId = reviewId;
+	}
+
+	public Long getChainId() {
+		return chainId;
+	}
+
+	public void setChainId(Long chainId) {
+		this.chainId = chainId;
+	}
+
+	public Long getFrontCassetteId() {
+		return frontCassetteId;
+	}
+
+	public void setFrontCassetteId(Long frontCassetteId) {
+		this.frontCassetteId = frontCassetteId;
+	}
+
+	public Long getRearCassetteId() {
+		return rearCassetteId;
+	}
+
+	public void setRearCassetteId(Long rearCassetteId) {
+		this.rearCassetteId = rearCassetteId;
+	}
+
+	public Long getFrontDerailleurId() {
+		return frontDerailleurId;
+	}
+
+	public void setFrontDerailleurId(Long frontDerailleurId) {
+		this.frontDerailleurId = frontDerailleurId;
+	}
+
+	public Long getRearDerailleurId() {
+		return rearDerailleurId;
+	}
+
+	public void setRearDerailleurId(Long rearDerailleurId) {
+		this.rearDerailleurId = rearDerailleurId;
+	}
+
+	public Long getBrandId() {
+		return brandId;
+	}
+
+	public void setBrandId(Long brandId) {
+		this.brandId = brandId;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -70,12 +139,12 @@ public class RequestCycleDTO {
 		this.geometry = geometry;
 	}
 
-	public String getFrontWhell() {
-		return frontWhell;
+	public String getFrontWheel() {
+		return frontWheel;
 	}
 
-	public void setFrontWhell(String frontWhell) {
-		this.frontWhell = frontWhell;
+	public void setFrontWheel(String frontWhell) {
+		this.frontWheel = frontWhell;
 	}
 
 	public String getRearWheel() {
@@ -166,12 +235,12 @@ public class RequestCycleDTO {
 		this.wheels = wheels;
 	}
 
-	public String getType_note() {
-		return type_note;
+	public String getTypeNote() {
+		return typeNote;
 	}
 
-	public void setType_note(String type_note) {
-		this.type_note = type_note;
+	public void setTypeNote(String type_note) {
+		this.typeNote = type_note;
 	}
 
 	public Double getRating() {

@@ -8,6 +8,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -50,7 +51,7 @@ public class CycleController {
 	@ApiResponses(value = {
 			@ApiResponse(code=999, message="Check")
 	})
-	public GenericResponce addCycle(@RequestBody RequestCycleDTO add) {
+	public ResponseEntity<Object> addCycle(@RequestBody RequestCycleDTO add) {
 		return cycleServices.addCycle(add);
 	}
 
@@ -112,19 +113,19 @@ public class CycleController {
 	//-------------------------------------------------------------GetAllBasics--------------------------------------------------
 	
 	
-	@GetMapping("/basics/getAllCategories")
+	@GetMapping("/generic/getAllCategories")
 	public List<Categories> getAllCategories(){
 		log.info("All Categories Returned");
 		return Arrays.asList(Categories.values());
 	} 
 	
-	@GetMapping("/basics/getStatus")
+	@GetMapping("/generic/getStatus")
 	public List<Status> getAllStatus(){
 		log.info("All the Status code name ");
 		return Arrays.asList(Status.values());
 	} 
 	
-	@GetMapping("/basics/getStatusCode")
+	@GetMapping("/generic/getStatusCode")
 	public Map<Object, Object> getStatusCode(){
 		Map<Object , Object> status=new HashMap<Object, Object>();
 		for(Status st:Status.values()) {
@@ -134,13 +135,13 @@ public class CycleController {
 		return status;
 	}
 	
-	@GetMapping("/basics/getAllAccessType")
+	@GetMapping("/generic/getAccessType")
 	public List<AccessType> getAllAccessType(){
 		log.info("all the Accesstype Returned");
 		return Arrays.asList(AccessType.values());
 	}
 	
-	@GetMapping("/basics/getGender")
+	@GetMapping("/generic/getGender")
 	public List<Gender> getGender(){
 		log.info("all the Gender Returned");
 		return Arrays.asList(Gender.values());

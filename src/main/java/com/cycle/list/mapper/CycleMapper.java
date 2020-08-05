@@ -6,12 +6,14 @@ import org.mapstruct.factory.Mappers;
 
 import com.cycle.list.domain.Cycle;
 import com.cycle.list.dto.requestDto.RequestCycleDTO;
-@Mapper
+@Mapper(uses = BrandMapper.class)
 public interface CycleMapper {
 
 	CycleMapper INSTANCE=Mappers.getMapper(CycleMapper.class);
+	// @Mapping(source = )
+	RequestCycleDTO dtoToDomain(Cycle cycle);
 	
-	RequestCycleDTO cycleToCycleDto(Cycle cycle);
+	Cycle domainToDto(RequestCycleDTO cycleDTO);
 	
 	
 }
